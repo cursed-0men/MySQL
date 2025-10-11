@@ -81,6 +81,34 @@ DELETE from customer WHERE customer_id = 1;
 TRUNCATE table orders;
 TRUNCATE table customer;
 
+-- ALTER queries
+-- 1. ADD 
+-- 2. MODIFY 
+-- 3. RENAME
+-- 4. DROP ...all for columns
+
+ALTER TABLE customer 
+ADD DOB INT; -- DOB can't be in int format...hence modifying it.
+ 
+ALTER TABLE customer
+MODIFY DOB Date;
+
+ALTER TABLE customer
+RENAME COLUMN DOB to date_of_birth;
+
+ALTER TABLE customer
+DROP COLUMN date_of_birth;
+
+
+-- Data query language
+-- GRANT: GRANT SELECT,UPDATE...TO tom,jerry;
+-- GERANT sysdba TO tom,jerry; ....superuser privileges of the dbms
+-- REVOKE: REVOKE SELECT,UPDATE..ON table_name tom,jerry;
+
+
+
+
+
 
 -- delete table: DROP TABLE IF EXISTS table_name;
 -- NOTE: For deleting data/entire table, we must remove the foreign constraints first.
