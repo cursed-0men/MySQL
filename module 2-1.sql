@@ -82,10 +82,10 @@ TRUNCATE table orders;
 TRUNCATE table customer;
 
 -- ALTER queries
--- 1. ADD 
--- 2. MODIFY 
--- 3. RENAME
--- 4. DROP ...all for columns
+-- 1. ADD column
+-- 2. MODIFY column datatype
+-- 3. RENAME column
+-- 4. DROP column
 
 ALTER TABLE customer 
 ADD DOB INT; -- DOB can't be in int format...hence modifying it.
