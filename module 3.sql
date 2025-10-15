@@ -183,4 +183,56 @@ VALUES
     (9014, 1014, '2023-07-26', 500.00, 'GPay'),
     (9015, 1015, '2023-07-26', 3000.00, 'COD');
     
-    
+
+
+select * from customers order by first_name ASC;
+
+select * from products order by price DESC;
+
+select * from orders order by order_date ASC;
+
+select * from orders order by order_date DESC LIMIT 10;
+
+select category from products;
+
+select distinct category from products;
+
+select first_name as CUSTOMERS from customers;
+
+select * from products where category = 'Electronics';
+
+select * from products where category <> 'Clothing';
+
+select concat(first_name," ",last_name) as CA_RESIDENTS from customers where state = 'CA';
+
+select first_name,last_name, phone from customers where first_name = 'Jane';
+
+select product_name, price from products where price>1000 order by price ASC;
+
+select product_name,price from products where price BETWEEN 500 AND 1000;
+
+select product_name,price from products where category = 'Accessories' AND price>1500;
+
+select product_name, category from products where category = 'Clothing' OR category = 'Footwear';
+
+select * from products where category <> 'Electronics';
+
+select email from customers where email LIKE '%example.com';
+
+select * from products where product_name LIKE 'L%';
+
+select * from customers where first_name LIKE '___';
+
+SELECT UPPER(CONCAT(first_name," ",last_name)) as FULL_NAME from customers;
+
+SELECT first_name, last_name, length(concat(first_name,last_name)) from customers;
+
+SELECT city from customers
+WHERE LENGTH(city) - LENGTH(REPLACE(city," ","")) + 1 > 1;
+
+SELECT COUNT(*)
+FROM customers
+WHERE SUBSTRING(email, LOCATE("@", email)) = "@example.com";
+
+SELECT substring_index('HELLO CLASS'," ",-3);
+
