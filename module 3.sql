@@ -183,7 +183,7 @@ VALUES
     (9014, 1014, '2023-07-26', 500.00, 'GPay'),
     (9015, 1015, '2023-07-26', 3000.00, 'COD');
     
-
+-- DQL queries
 
 select * from customers order by first_name ASC;
 
