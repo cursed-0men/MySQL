@@ -59,6 +59,9 @@ month(birthdate) = month(date_sub(curdate(), interval 7 month));
 -- 3. Find employees who were hired before January 1, 2018.
 select concat(FirstName,' ',LastName) as name, HireDate from Employee
 where year(HireDate) < 2018;
+-- OR
+select * from employee where 
+hiredate < date_sub(date_format(curdate(),'%Y-01-01'), interval 7 year);
 
 -- 4. Calculate the age of each employee as of today and display their names along with the age.
 select
