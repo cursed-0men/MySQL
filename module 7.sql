@@ -39,13 +39,22 @@ VALUES
 -- |🔰QUESTIONS|
 -- +-----------+
 
+-- NOTE: Dynamic Queries varies with current date.
+
 -- 1. Write a query to find employees hired in the year 2017.
 select EmployeeID, concat(FirstName,' ',LastName) as name, HireDate
 from Employee where year(HireDate) = '2017';
+-- OR
+select * from employee where 
+year(hiredate) = year(date_sub(curdate(), interval 8 year));
 
 -- 2. Retrieve the employees whose birthdays are in the month of April.
 select concat(FirstName,' ',LastName) as name, BirthDate from Employee
 where month(BirthDate) = 4;
+-- OR
+select * from employee where 
+month(birthdate) = month(date_sub(curdate(), interval 7 month));
+
 
 -- 3. Find employees who were hired before January 1, 2018.
 select concat(FirstName,' ',LastName) as name, HireDate from Employee
