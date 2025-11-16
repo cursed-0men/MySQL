@@ -31,7 +31,19 @@ VALUES
 (12, 'William', 'Rodriguez', '1984-10-28', '2020-03-25', 63000.00, 'Marketing'),
 (13, 'Sophia', 'Hernandez', '1996-04-03', '2021-07-09', 62000.00, 'IT'),
 (14, 'James', 'Lopez', '1986-08-10', '2016-09-02', 67000.00, 'HR'),
-(15, 'Emma', 'Clark', '1990-12-19', '2017-11-30', 60000.00, 'Finance');
+(15, 'Emma', 'Clark', '1990-12-19', '2017-11-30', 60000.00, 'Finance'),
+(16, 'Henry', 'Adams', '1988-03-11', '2010-07-19', 62000.00, 'Sales'),
+(17, 'Chloe', 'Parker', '1990-11-04', '2011-02-23', 64000.00, 'Marketing'),
+(18, 'Ethan', 'Stewart', '1987-01-27', '2012-09-14', 58000.00, 'IT'),
+(19, 'Grace', 'Carter', '1989-05-08', '2013-03-30', 67000.00, 'HR'),
+(20, 'Logan', 'Phillips', '1986-12-21', '2014-11-02', 69000.00, 'Finance'),
+(21, 'Natalie', 'Evans', '1991-06-15', '2015-08-26', 63000.00, 'Sales'),
+(22, 'Christopher', 'Turner', '1985-09-09', '2016-05-17', 71000.00, 'Marketing'),
+(23, 'Isabella', 'Collins', '1992-04-29', '2017-10-13', 65000.00, 'IT'),
+(24, 'Andrew', 'Bailey', '1988-07-18', '2018-04-09', 72000.00, 'HR'),
+(25, 'Madison', 'Morgan', '1993-02-02', '2019-01-20', 66000.00, 'Finance'),
+(26, 'Benjamin', 'Reed', '1990-10-11', '2011-06-05', 60000.00, 'Sales'),
+(27, 'Ella', 'Cook', '1987-01-25', '2012-12-18', 64000.00, 'Marketing');
 
 
 
@@ -74,8 +86,8 @@ select * from Employee
 where HireDate = date_add(BirthDate, interval 5 year); -- NONE
 
 -- 6. List employees who have been hired for more than 5 years.
-select * from Employee
-where Curdate() - HireDate > 5;
+select * from employee 
+where floor(datediff(curdate(), hiredate)/365) > 5;
 
 -- 7. Find the employees whose birthdays fall on a weekend.
 select BirthDate ,dayname(BirthDate), EmployeeID from Employee
